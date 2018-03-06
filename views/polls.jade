@@ -1,13 +1,13 @@
 extends layout
 
-block content  
+block content
   div.clearfix
     div.pull-left
       i.fa.fa-lg.fa-pie-chart
       span Awesome Polls
     div.pull-right
-      img(src="#{user.picture}", style="height:24px; border-radius: 30px;")  
-      strong(style="margin: 0px 10px;") #{user.nickname} 
+      img(src="#{user.picture}", style="height:24px; border-radius: 30px;")
+      strong(style="margin: 0px 10px;") #{user.nickname}
       a(href="/logout") Logout
   br
   div.jumbotron
@@ -22,7 +22,7 @@ block content
             ul.list-unstyled
               each person, index in poll.estimates
                 li
-                  if index == 0
+                  if index === 0
                     p
                       strong #{person.choice}
                     div.progress
@@ -35,5 +35,5 @@ block content
                       div(class="progress-bar progress-bar-info", style="width: #{person.value}%", role="progressbar")
                         span=person.value
           div.panel-footer
-            a.btn.btn-sm View Results  
+            a.btn.btn-sm View Results
             a.btn.btn-sm.write-report Write Report
