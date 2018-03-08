@@ -16,14 +16,15 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', passport.authenticate('auth0', {
-  clientID: env.AUTH0_CLIENT_ID,
-  domain: env.AUTH0_DOMAIN ,
-  redirectUri: env.AUTH0_CALLBACK_URL,
-  responseType: 'code',
-  scope: 'openid profile email'}),
-  function(req, res) {
+    clientID: env.AUTH0_CLIENT_ID,
+    domain: env.AUTH0_DOMAIN,
+    redirectUri: env.AUTH0_CALLBACK_URL,
+    responseType: 'code',
+    scope: 'openid profile email'
+  }), (req, res) => {
     res.redirect("/");
-});
+  }
+);
 
 router.get('/logout', (req, res) => {
   req.logout();
