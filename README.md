@@ -13,6 +13,9 @@ git clone https://github.com/OMENSAH/Build-and-Authenticate-a-Node-Js-App-with-J
 # move working directory into it
 cd nodejs-app
 
+# install project's modules
+npm i 
+
 # set environment variables
 export AUTH0_DOMAIN=bkrebs.auth0.com
 export AUTH0_CLIENT_ID=c0aGnQ5vdklL2oSZsnSe5lG23p1xme2B
