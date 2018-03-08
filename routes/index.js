@@ -15,10 +15,6 @@ router.get('/', (req, res) => {
   res.render('index', {env: env});
 });
 
-// router.get('/login', (req, res) => {
-//   res.render('login', {env: env});
-// });
-
 router.get('/login', passport.authenticate('auth0', {
   clientID: env.AUTH0_CLIENT_ID,
   domain: env.AUTH0_DOMAIN ,
@@ -28,7 +24,6 @@ router.get('/login', passport.authenticate('auth0', {
   function(req, res) {
     res.redirect("/");
 });
-
 
 router.get('/logout', (req, res) => {
   req.logout();
